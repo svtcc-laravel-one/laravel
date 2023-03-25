@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::post('/login',[LoginController::class,'login']);;
+Route::post('/login',[LoginController::class,'login']);
+Route::post('/register',[LoginController::class,'register']);
