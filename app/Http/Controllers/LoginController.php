@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,6 +37,11 @@ class LoginController extends Controller
         $userModel->password = $password;
         $userModel->save();
         return response()->json(['success' => '注册成功'], 200);
+    }
+    public function logout()
+    {
+        session()->flush();
+        return response()->json(['success' => '退出登录成功！'], 200);
     }
 }
 
